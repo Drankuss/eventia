@@ -291,7 +291,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
                     />
                     <Input
                       type="number"
-                      placeholder="Price"
+                      placeholder="PLN"
                       {...field}
                       className="o-regular-16 border-0 bg-grey-50 outline-offset-0 focus:border-0 focus-visible:ring-0 focus-visible:ring-offest-0"
                     />
