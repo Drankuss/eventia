@@ -28,7 +28,7 @@ export default async function Home({ searchParams }: SearchParamProps) {
               Invite, Have Fun, Celebrate: For Gamers By Gamers!
             </h1>
             <p className="p-regular-20 md:p-regular-24">
-              GameUpPixel is a event platform for gamers to share their ideas
+              GameUpPixel is a event platform for gamers to share their drive
               and experience with other gamers.
             </p>
             <Button size="lg" asChild className="button w-full sm:w-fit">
