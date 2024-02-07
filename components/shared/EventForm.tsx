@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { eventsFormSchema } from "@/lib/validator";
+import { eventFormSchema } from "@/lib/validator";
 import { eventDefaultValues } from "@/constants";
 import Dropdown from "./Dropdown";
 import { FileUploader } from "./FileUploader";
@@ -50,12 +50,12 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
 
   const { startUpload } = useUploadThing("imageUploader");
 
-  const form = useForm<z.infer<typeof eventsFormSchema>>({
-    resolver: zodResolver(eventsFormSchema),
+  const form = useForm<z.infer<typeof eventFormSchema>>({
+    resolver: zodResolver(eventFormSchema),
     defaultValues: initialValues,
   });
 
-  async function onSubmit(values: z.infer<typeof eventsFormSchema>) {
+  async function onSubmit(values: z.infer<typeof eventFormSchema>) {
     let uploadedImageUrl = values.imageUrl;
 
     if (files.length > 0) {
