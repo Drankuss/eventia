@@ -17,10 +17,12 @@ import {
 } from "@/components/ui/alert-dialog";
 
 import { deleteEvent } from "@/lib/actions/event.actions";
+import { useUser } from "@clerk/nextjs";
 
 export const DeleteConfirmation = ({ eventId }: { eventId: string }) => {
   const pathname = usePathname();
   let [isPending, startTransition] = useTransition();
+  const { user } = useUser();
 
   return (
     <AlertDialog>
@@ -47,7 +49,15 @@ export const DeleteConfirmation = ({ eventId }: { eventId: string }) => {
           <AlertDialogAction
             onClick={() =>
               startTransition(async () => {
-                await deleteEvent({ eventId, path: pathname });
+                if (user) {
+                  await deleteEvent({
+                    eventId,
+                    path: pathname,
+                    userId: user.id,
+                  });
+                } else {
+                  console.error("User is not authenticated");
+                }
               })
             }
           >
