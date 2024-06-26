@@ -69,9 +69,17 @@ export async function updateEvent({ userId, event, path }: UpdateEventParams) {
   try {
     await connectToDatabase();
 
+    const user = await User.findById(userId);
+    if (!user) throw new Error("User not found");
+
     const eventToUpdate = await Event.findById(event._id);
-    if (!eventToUpdate || eventToUpdate.organizer.toHexString() !== userId) {
-      throw new Error("Unauthorized or event not found");
+    if (!eventToUpdate) throw new Error("Event not found");
+
+    if (
+      user.role !== "admin" &&
+      eventToUpdate.organizer.toHexString() !== userId
+    ) {
+      throw new Error("Unauthorized");
     }
 
     const updatedEvent = await Event.findByIdAndUpdate(
@@ -87,9 +95,26 @@ export async function updateEvent({ userId, event, path }: UpdateEventParams) {
   }
 }
 
-export async function deleteEvent({ eventId, path }: DeleteEventParams) {
+export async function deleteEvent({
+  userId,
+  eventId,
+  path,
+}: DeleteEventParams) {
   try {
     await connectToDatabase();
+
+    const user = await User.findById(userId);
+    if (!user) throw new Error("User not found");
+
+    const eventToDelete = await Event.findById(eventId);
+    if (!eventToDelete) throw new Error("Event not found");
+
+    if (
+      user.role !== "admin" &&
+      eventToDelete.organizer.toHexString() !== userId
+    ) {
+      throw new Error("Unauthorized");
+    }
 
     const deletedEvent = await Event.findByIdAndDelete(eventId);
     if (deletedEvent) revalidatePath(path);
