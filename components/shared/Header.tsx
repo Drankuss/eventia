@@ -14,7 +14,7 @@ const Header = () => {
             src="/assets/images/logo.svg"
             width={120}
             height={120}
-            alt="GameUpPixel logo"
+            alt="Eventia logo"
           />
         </Link>
 

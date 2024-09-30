@@ -14,7 +14,7 @@ const Footer = () => {
           />
         </Link>
 
-        <p>2024 GameUpPixel. All Rights reserved</p>
+        <p>2024 Eventia. All Rights reserved</p>
       </div>
     </footer>
   );

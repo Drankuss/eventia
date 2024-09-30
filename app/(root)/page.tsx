@@ -26,8 +26,8 @@ export default async function Home({ searchParams }: SearchParamProps) {
           <div className="flex flex-col justify-center gap-8">
             <h1 className="h1-bold">Invite, Have Fun, Celebrate!</h1>
             <p className="p-regular-20 md:p-regular-24">
-              GameUpPixel is a event platform for people to share their drive
-              and experience with others.
+              Eventia is a event platform for people to share their drive and
+              experience with others.
             </p>
             <Button size="lg" asChild className="button w-full sm:w-fit">
               <Link href="#events">Explore Now</Link>
@@ -35,8 +35,8 @@ export default async function Home({ searchParams }: SearchParamProps) {
           </div>
 
           <Image
-            src="/assets/images/hero.png"
-            alt="hero"
+            src="/assets/images/main.png"
+            alt="main"
             width={1000}
             height={1000}
             className="max-h-[70vh] object-contain object-center 2xl:max-h-[50vh]"

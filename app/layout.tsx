@@ -10,8 +10,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "GameUpPixel",
-  description: "For Gamers By Gamers",
+  title: "Eventia",
+  description: "For Pepole By Pepole",
   icons: {
     icon: "/assets/images/logo.svg",
   },
