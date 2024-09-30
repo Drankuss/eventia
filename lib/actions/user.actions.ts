@@ -14,10 +14,6 @@ export async function createUser(user: CreateUserParams) {
   try {
     await connectToDatabase();
 
-    if (!user.role) {
-      user.role = "user";
-    }
-
     const newUser = await User.create(user);
     return JSON.parse(JSON.stringify(newUser));
   } catch (error) {

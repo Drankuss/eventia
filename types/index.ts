@@ -5,7 +5,6 @@ export type CreateUserParams = {
   username: string;
   email: string;
   photo: string;
-  role?: string;
 };
 
 export type UpdateUserParams = {
@@ -13,7 +12,6 @@ export type UpdateUserParams = {
   lastName: string;
   username: string;
   photo: string;
-  role?: string;
 };
 
 export type CreateEventParams = {
@@ -52,7 +50,6 @@ export type UpdateEventParams = {
 };
 
 export type DeleteEventParams = {
-  userId: string;
   eventId: string;
   path: string;
 };
