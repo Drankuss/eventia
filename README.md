@@ -18,7 +18,7 @@ Open in browser [http://localhost:3000](http://localhost:3000)
 
 ## Online view
 
-Website is also launched online [https://gameuppixel.vercel.app](https://gameuppixel.vercel.app)
+Website is also launched online [https://project-eventia.vercel.app](https://project-eventia.vercel.app)
 
 ## Reminders
 
