@@ -5,6 +5,7 @@ export type CreateUserParams = {
   username: string;
   email: string;
   photo: string;
+  role?: string;
 };
 
 export type UpdateUserParams = {
@@ -12,6 +13,7 @@ export type UpdateUserParams = {
   lastName: string;
   username: string;
   photo: string;
+  role?: string;
 };
 
 export type CreateEventParams = {
@@ -33,6 +35,7 @@ export type CreateEventParams = {
 
 export type UpdateEventParams = {
   userId: string;
+  userRole: string;
   event: {
     _id: string;
     title: string;
@@ -52,6 +55,7 @@ export type UpdateEventParams = {
 export type DeleteEventParams = {
   eventId: string;
   path: string;
+  userId: string;
 };
 
 export type GetAllEventsParams = {

@@ -20,7 +20,7 @@ export async function POST(req: Request) {
   const svix_signature = headerPayload.get("svix-signature");
 
   if (!svix_id || !svix_timestamp || !svix_signature) {
-    return new Response("Error occured -- no svix headers", {
+    return new Response("Error occurred -- no svix headers", {
       status: 400,
     });
   }
@@ -40,7 +40,7 @@ export async function POST(req: Request) {
     }) as WebhookEvent;
   } catch (err) {
     console.error("Error verifying webhook:", err);
-    return new Response("Error occured", {
+    return new Response("Error occurred", {
       status: 400,
     });
   }
@@ -59,14 +59,16 @@ export async function POST(req: Request) {
       firstName: first_name,
       lastName: last_name,
       photo: image_url,
+      role: "user",
     };
 
     const newUser = await createUser(user);
 
     if (newUser) {
-      await clerkClient.users.updateUserMetadata(id, {
+      await clerkClient.users.updateUser(id, {
         publicMetadata: {
           userId: newUser._id,
+          role: newUser.role,
         },
       });
     }
@@ -85,6 +87,14 @@ export async function POST(req: Request) {
     };
 
     const updatedUser = await updateUser(id, user);
+
+    if (updatedUser) {
+      await clerkClient.users.updateUserMetadata(id, {
+        publicMetadata: {
+          role: updatedUser.role,
+        },
+      });
+    }
 
     return NextResponse.json({ message: "OK", user: updatedUser });
   }

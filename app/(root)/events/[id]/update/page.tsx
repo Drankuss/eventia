@@ -12,6 +12,7 @@ const UpdateEvent = async ({ params: { id } }: UpdateEventProps) => {
   const { sessionClaims } = auth();
 
   const userId = sessionClaims?.userId as string;
+  const userRole = sessionClaims?.role as string;
   const event = await getEventById(id);
 
   return (
@@ -26,6 +27,7 @@ const UpdateEvent = async ({ params: { id } }: UpdateEventProps) => {
         <EventForm
           type="Update"
           userId={userId}
+          userRole={userRole}
           event={event}
           eventId={event._id}
         />

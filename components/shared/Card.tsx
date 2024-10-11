@@ -15,8 +15,10 @@ type CardProps = {
 const Card = ({ event, hasOrderLink, hidePrice }: CardProps) => {
   const { sessionClaims } = auth();
   const userId = sessionClaims?.userId as string;
+  const userRole = sessionClaims?.role as string;
 
   const isEventCreator = userId === event.organizer._id.toString();
+  const isAdmin = userRole === "admin";
 
   return (
     <div className="group relative flex min-h-[380px] w-full max-w-[400px] flex-col overflow-hidden rounded-xl bg-white shadow-md transition-all hover:shadow-lg md:min-h-[438px]">
@@ -26,7 +28,7 @@ const Card = ({ event, hasOrderLink, hidePrice }: CardProps) => {
         className="flex-center flex-grow bg-gray-50 bg-cover bg-center text-grey-500"
       />
 
-      {isEventCreator && !hidePrice && (
+      {(isEventCreator || isAdmin) && !hidePrice && (
         <div className="absolute right-2 top-2 flex flex-col gap-4 rounded-xl bg-white p-3 shadow-sm transition-all">
           <Link href={`/events/${event._id}/update`}>
             <Image
@@ -37,7 +39,7 @@ const Card = ({ event, hasOrderLink, hidePrice }: CardProps) => {
             />
           </Link>
 
-          <DeleteConfirmation eventId={event._id} />
+          <DeleteConfirmation eventId={event._id} userId={userId} />
         </div>
       )}
 
