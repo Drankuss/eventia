@@ -5,6 +5,7 @@ const CreateEvent = () => {
   const { sessionClaims } = auth();
 
   const userId = sessionClaims?.userId as string;
+  const userRole = sessionClaims?.role as string;
 
   return (
     <>
@@ -15,7 +16,7 @@ const CreateEvent = () => {
       </section>
 
       <div className="wrapper my-8">
-        <EventForm userId={userId} type="Create" />
+        <EventForm userId={userId} userRole={userRole} type="Create" />
       </div>
     </>
   );
