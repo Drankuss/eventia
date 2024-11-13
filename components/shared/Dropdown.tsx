@@ -56,13 +56,13 @@ const Dropdown = ({ value, onChangeHandler }: DropdownProps) => {
       <SelectTrigger className="select-field">
         <SelectValue placeholder="Category" />
       </SelectTrigger>
-      <SelectContent>
+      <SelectContent className="bg-primary-100 text-white">
         {categories.length > 0 &&
           categories.map((category) => (
             <SelectItem
               key={category.id}
               value={category._id}
-              className="select-item p-regular-14"
+              className="select-item p-regular-14 bg-primary-100 text-white focus:bg-primary-50 focus:text-white"
             >
               {category.name}
             </SelectItem>

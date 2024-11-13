@@ -21,7 +21,7 @@ export default async function Home({ searchParams }: SearchParamProps) {
 
   return (
     <>
-      <section className="bg-primary-50 bg-dotted-pattern bg-contain py-5 md:py-10">
+      <section className="bg-primary-100 bg-dotted-pattern bg-contain text-white py-5 md:py-10">
         <div className="wrapper grid grid-cols-1 gap-5 md:grid-cols-2 2xl:gap-0">
           <div className="flex flex-col justify-center gap-8">
             <h1 className="h1-bold">Invite, Have Fun, Celebrate!</h1>
@@ -29,7 +29,11 @@ export default async function Home({ searchParams }: SearchParamProps) {
               Eventia is a event platform for people to share their drive and
               experience with others.
             </p>
-            <Button size="lg" asChild className="button w-full sm:w-fit">
+            <Button
+              size="lg"
+              asChild
+              className="button text-black w-full sm:w-fit"
+            >
               <Link href="#events">Explore Now</Link>
             </Button>
           </div>
@@ -46,9 +50,9 @@ export default async function Home({ searchParams }: SearchParamProps) {
 
       <section
         id="events"
-        className="wrapper my-8 flex flex-col gap-8 md:gap-12"
+        className="wrapper bg-primary-50 my-8 flex flex-col gap-8 md:gap-12"
       >
-        <h2 className="h2-bold">
+        <h2 className="h2-bold text-white">
           Trusted by <br /> Countless of Events
         </h2>
 

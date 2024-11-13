@@ -196,7 +196,7 @@ const EventForm = ({
             render={({ field }) => (
               <FormItem className="w-full">
                 <FormControl>
-                  <div className="flex-center h-[54px] w-full overflow-hidden rounded-full bg-grey-50 px-4 py-2">
+                  <div className="flex-center h-[54px] w-full overflow-hidden rounded-full bg-primary-100 px-4 py-2">
                     <Image
                       src="/assets/icons/location-grey.svg"
                       alt="calendar"
@@ -223,7 +223,7 @@ const EventForm = ({
             render={({ field }) => (
               <FormItem className="w-full">
                 <FormControl>
-                  <div className="flex-center h-[54px] w-full overflow-hidden rounded-full bg-grey-50 px-4 py-2">
+                  <div className="flex-center h-[54px] w-full overflow-hidden rounded-full text-white bg-primary-100 px-4 py-2">
                     <Image
                       src="/assets/icons/calendar.svg"
                       alt="calendar"
@@ -231,7 +231,7 @@ const EventForm = ({
                       height={24}
                       className="filter-grey"
                     />
-                    <p className="ml-3 whitespace-nowrap text-grey-600">
+                    <p className="ml-3 whitespace-nowrap text-white">
                       Start Date:
                     </p>
                     <DatePicker
@@ -255,7 +255,7 @@ const EventForm = ({
             render={({ field }) => (
               <FormItem className="w-full">
                 <FormControl>
-                  <div className="flex-center h-[54px] w-full overflow-hidden rounded-full bg-grey-50 px-4 py-2">
+                  <div className="flex-center h-[54px] w-full overflow-hidden rounded-full text-white bg-primary-100 px-4 py-2">
                     <Image
                       src="/assets/icons/calendar.svg"
                       alt="calendar"
@@ -263,7 +263,7 @@ const EventForm = ({
                       height={24}
                       className="filter-grey"
                     />
-                    <p className="ml-3 whitespace-nowrap text-grey-600">
+                    <p className="ml-3 whitespace-nowrap text-white">
                       End Date:
                     </p>
                     <DatePicker
@@ -289,7 +289,7 @@ const EventForm = ({
             render={({ field }) => (
               <FormItem className="w-full">
                 <FormControl>
-                  <div className="flex-center h-[54px] w-full overflow-hidden rounded-full bg-grey-50 px-4 py-2">
+                  <div className="flex-center h-[54px] w-full overflow-hidden rounded-full text-white bg-primary-100 px-4 py-2">
                     <Image
                       src="/assets/icons/dollar.svg"
                       alt="dollar"
@@ -301,7 +301,7 @@ const EventForm = ({
                       type="number"
                       placeholder="Price"
                       {...field}
-                      className="p-regular-16 border-0 bg-grey-50 outline-offset-0 focus:border-0 focus-visible:ring-0 focus-visible:ring-offest-0"
+                      className="p-regular-16 border-0 placeholder:text-white bg-primary-100 outline-offset-0 focus:border-0 focus-visible:ring-0 focus-visible:ring-offest-0"
                     />
 
                     <FormField
@@ -342,7 +342,7 @@ const EventForm = ({
             render={({ field }) => (
               <FormItem className="w-full">
                 <FormControl>
-                  <div className="flex-center h-[54px] w-full overflow-hidden rounded-full bg-grey-50 px-4 py-2">
+                  <div className="flex-center h-[54px] w-full overflow-hidden rounded-full bg-primary-100 px-4 py-2">
                     <Image
                       src="/assets/icons/link.svg"
                       alt="link"
@@ -366,7 +366,7 @@ const EventForm = ({
           type="submit"
           size="lg"
           disabled={form.formState.isSubmitting}
-          className="button col-span-2 w-full"
+          className="button col-span-2 w-full text-black"
         >
           {form.formState.isSubmitting ? "Submitting..." : `${type} Event`}
         </Button>
