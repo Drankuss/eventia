@@ -41,10 +41,10 @@ export const DeleteConfirmation = ({
         />
       </AlertDialogTrigger>
 
-      <AlertDialogContent className="bg-white">
+      <AlertDialogContent className="bg-primary-50">
         <AlertDialogHeader>
           <AlertDialogTitle>Are you sure you want to delete?</AlertDialogTitle>
-          <AlertDialogDescription className="p-regular-16 text-grey-600">
+          <AlertDialogDescription className="p-regular-16 text-primary-500">
             This will permanently delete this event
           </AlertDialogDescription>
         </AlertDialogHeader>

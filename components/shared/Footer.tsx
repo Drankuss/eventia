@@ -14,7 +14,7 @@ const Footer = () => {
           />
         </Link>
 
-        <p className="text-white">2024 Eventia. All Rights reserved</p>
+        <p className="text-white">2025 Eventia. All Rights reserved</p>
       </div>
     </footer>
   );
